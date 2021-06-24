@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo df -h >> out.txt
-cat out.txt | sed 's/\|/ /'|awk '{print $6}' >> in.txt
-for mpoint in $(cat in.txt); do mkdir 777 $mpoint; done
+sudo df -h >> dfout.txt
+cat dfout.txt | sed 's/\|/ /'|awk '{print $6}' >> mntin.txt
+for mpoint in $(cat mntin.txt); do mkdir 777 $mpoint; done
