@@ -33,8 +33,7 @@ while IFS= read -r line
 do
   echo "$line" >> /tmp/hostnamebkp
 done < "$input"
-cat /tmp/hostnamebkp | grep -A100 /backup >> /tmp/etchostnamebkp
-
+cat /tmp/hostnamebkp > /tmp/etchostnamebkp
 
 /usr/local/bin/aws s3 cp /tmp/etchostnamebkp s3://cf-templates-tqftrjy4ugkm-us-east-1
 ###################### COPYING mount points entries onto S3 ##################
